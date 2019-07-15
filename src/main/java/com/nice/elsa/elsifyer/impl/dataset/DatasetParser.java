@@ -52,8 +52,8 @@ public class DatasetParser {
 
             String answer=line.substring(aStartIndex+1, aEndIndex);
 
-            System.out.println("Q: "+question);
-            System.out.println("A: "+answer);
+            //System.out.println("Q: "+question);
+            //System.out.println("A: "+answer);
             System.out.println();
 
             result.put(question, answer);
