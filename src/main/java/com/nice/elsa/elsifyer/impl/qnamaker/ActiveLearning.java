@@ -41,9 +41,9 @@ public class ActiveLearning {
         HttpResponse httpResponse = httpclient.execute(httppost);
         int statusCode = httpResponse.getStatusLine().getStatusCode();
 
+        System.out.println("Status code: "+statusCode);
         if (statusCode<200 || statusCode>=300) {
             System.out.println("Failed to send training data");
-            System.out.println("Status code: "+statusCode);
             System.out.println(httpResponse.getStatusLine().getReasonPhrase());
             return false;
         }

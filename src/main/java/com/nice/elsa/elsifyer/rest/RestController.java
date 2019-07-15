@@ -1,19 +1,19 @@
 package com.nice.elsa.elsifyer.rest;
 
 import com.nice.elsa.elsifyer.impl.qnamaker.ActiveLearning;
+import com.nice.elsa.elsifyer.impl.service.ElsaService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.PostConstruct;
 import java.io.IOException;
-import java.util.UUID;
 
 @Controller
 @RequestMapping("/elsa")
 @CrossOrigin(origins = "*")
 public class RestController {
 
-    private static final String BARK_EILAM_EMAIL = "barak.eilam@nice.com";
+    private static final String BARK_EILAM_EMAIL = "be@nice.com";
     private ActiveLearning activeLearning = new ActiveLearning();
 
     ElsaAnswer ans1, ans2, ans3;

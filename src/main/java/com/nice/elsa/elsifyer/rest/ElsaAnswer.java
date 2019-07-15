@@ -5,21 +5,21 @@ import java.util.UUID;
 
 public class ElsaAnswer {
 
-    private UUID answerId;
+    private int answerId;
     private String text;
-    private int rank;
+    private double rank;
 
-    public ElsaAnswer(UUID answerId, String text, int rank) {
+    public ElsaAnswer(int answerId, String text, double rank) {
         this.answerId = answerId;
         this.text = text;
         this.rank = rank;
     }
 
-    public UUID getAnswerId() {
+    public int getAnswerId() {
         return answerId;
     }
 
-    public void setAnswerId(UUID answerId) {
+    public void setAnswerId(int answerId) {
         this.answerId = answerId;
     }
 
@@ -31,11 +31,11 @@ public class ElsaAnswer {
         this.text = text;
     }
 
-    public int getRank() {
+    public double getRank() {
         return rank;
     }
 
-    public void setRank(int rank) {
+    public void setRank(double rank) {
         this.rank = rank;
     }
 
@@ -44,8 +44,8 @@ public class ElsaAnswer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ElsaAnswer that = (ElsaAnswer) o;
-        return rank == that.rank &&
-                answerId.equals(that.answerId) &&
+        return answerId == that.answerId &&
+                Double.compare(that.rank, rank) == 0 &&
                 text.equals(that.text);
     }
 
