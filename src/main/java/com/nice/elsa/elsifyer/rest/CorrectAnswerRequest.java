@@ -5,13 +5,23 @@ import java.util.UUID;
 
 public class CorrectAnswerRequest {
 
-    private UUID answerId;
+    private String question;
+    private long answerId;
 
-    public UUID getAnswerId() {
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public long getAnswerId() {
         return answerId;
     }
 
-    public void setAnswerId(UUID answerId) {
+    public void setAnswerId(long answerId) {
         this.answerId = answerId;
     }
 
@@ -20,11 +30,12 @@ public class CorrectAnswerRequest {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CorrectAnswerRequest that = (CorrectAnswerRequest) o;
-        return answerId.equals(that.answerId);
+        return answerId == that.answerId &&
+                Objects.equals(question, that.question);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(answerId);
+        return Objects.hash(question, answerId);
     }
 }
